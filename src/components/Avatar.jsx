@@ -1,5 +1,6 @@
 import './Avatar.css'
 
+
 export default function Avatar() {
 
   const imgSrc = 'https://i.imgur.com/7vQD0fPs.jpg';
