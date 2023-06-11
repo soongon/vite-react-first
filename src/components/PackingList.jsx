@@ -8,13 +8,15 @@ export default function PackingList() {
     'Photo of Tam',
   ];
 
+  const items = packingList.map(item => 
+    <Item name={item} isPacked={true} />
+  );
+
   return (
     <section>
       <h1>Sally Ride's Packing List</h1>
       <ul>
-        <Item name={packingList[0]} isPacked={true} />
-        <Item name={packingList[1]} isPacked={false} />
-        <Item name={packingList[2]} isPacked={true} />
+        { items }
       </ul>
     </section>
   );
