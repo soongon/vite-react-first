@@ -1,23 +1,27 @@
 import './App.css';
-import { people } from './data.js';
+import BasicButton from "./components/BasicButton";
+import UseRefHookDemo from './components/UseRefHookDemo';
 
-export default function List() {
+export default function App() {
 
-  const personList = people.map(person => 
-    <li key={person.id}>
-      <img
-        src={person.imageUrl}
-        alt={person.name}
-      />
-      <p>
-        <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
-      </p>
-    </li>
-  )
+  const buttonClicked = () => {
+    alert("hi");
+  };
 
   return (
-    <ul>{personList}</ul>
+    <>
+      <BasicButton onClick={buttonClicked}>클릭해주세요</BasicButton>
+
+      <hr/>
+
+      <div className="Toolbar" onClick={() => alert('you clicked on the toolbar')}>
+        <BasicButton onClick={() => alert('Playing!')}>Play Movie</BasicButton>
+        <BasicButton onClick={() => alert('Uploading!')}>Upload Image</BasicButton>
+      </div>
+
+      <hr/>
+
+      <UseRefHookDemo/>
+    </>
   );
 }
